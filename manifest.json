@@ -1,0 +1,29 @@
+{
+  "description": "pipe text",
+  "manifest_version": 2,
+  "name": "pipe text",
+  "version": "1.0",
+  "applications": {
+    "gecko": {
+      "id": "piper@yschmitz.com"
+    }
+  },
+
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content-script.js"]
+    }
+  ],
+
+  "browser_action": {
+    "default_icon": "icons/message.svg",
+    "default_title": "piper",
+    "default_popup": "menu/build/index.html"
+  },
+ 
+  "permissions": ["nativeMessaging", "contextMenus", "clipboardRead", "clipboardWrite"]
+}
